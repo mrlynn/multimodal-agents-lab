@@ -7,3 +7,4 @@ PyMuPDF==1.25.5
 Pillow==11.2.1
 tqdm==2.2.3
 tenacity==9.1.2
+voyageai==0.3.2
