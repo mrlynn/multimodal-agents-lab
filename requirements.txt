@@ -4,3 +4,10 @@ PyMuPDF==1.25.5
 Pillow==11.2.1
 tqdm==4.67.1
 voyageai==0.3.2
+
+# Validation and Interactive Features
+ipywidgets==8.1.1
+matplotlib==3.8.2
+plotly==5.18.0
+scikit-learn==1.3.2  # For t-SNE visualization
+pandas==2.1.4  # For data manipulation in visualizations
