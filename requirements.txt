@@ -4,3 +4,5 @@ PyMuPDF==1.25.5
 Pillow==11.2.1
 tqdm==4.67.1
 voyageai==0.3.2
+ipykernel==6.29.5
+jupyterlab==4.3.5
