@@ -15,7 +15,7 @@
         "MONGODB_URI": "mongodb://admin:mongodb@mongodb:27017/"
     },
     "updateContentCommand": "python3 -m pip install -r requirements.txt",
-    "postCreateCommand": "",
+    "postCreateCommand": "python3 -m ipykernel install --user --name=python3 --display-name='Python 3'",
     "customizations": {
         "codespaces": {
             "openFiles": []
