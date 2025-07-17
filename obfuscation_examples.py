@@ -12,9 +12,9 @@ def base64_obfuscation():
     """Base64 encode/decode sensitive strings"""
     print("🔐 Method 1: Base64 Encoding")
     
-    # Original sensitive data
-    api_key = "AIzaSyAEaO1UMo9k844-ejiP_dfT7R-EJk0xy4Q"
-    serverless_url = "https://5bzwmpf3kydzcy2kbz4rtn4z7i0crxoh.lambda-url.us-west-2.on.aws/"
+    # Original sensitive data (using fake example keys)
+    api_key = "YOUR-API-KEY-HERE-DO-NOT-COMMIT-REAL-KEYS"
+    serverless_url = "https://your-serverless-endpoint.example.com/"
     
     # Encode
     encoded_key = base64.b64encode(api_key.encode()).decode()
@@ -59,14 +59,14 @@ def split_reconstruct():
     print("🔐 Method 3: Split and Reconstruct")
     
     # Split API key
-    key_parts = ["AIzaSyAEaO1U", "Mo9k844-ejiP", "_dfT7R-EJk0xy4Q"]
+    key_parts = ["YOUR-API", "-KEY-HERE", "-EXAMPLE"]
     reconstructed_key = "".join(key_parts)
     
     # Split URL
     url_parts = [
         "https://",
-        "5bzwmpf3kydzcy2kbz4rtn4z7i0crxoh",
-        ".lambda-url.us-west-2.on.aws/"
+        "your-endpoint-id",
+        ".example.com/"
     ]
     reconstructed_url = "".join(url_parts)
     
@@ -92,7 +92,7 @@ def caesar_obfuscation():
     """Use Caesar cipher for obfuscation"""
     print("🔐 Method 4: Caesar Cipher")
     
-    original = "AIzaSyAEaO1UMo9k844-ejiP_dfT7R-EJk0xy4Q"
+    original = "YOUR-API-KEY-HERE-EXAMPLE"
     encoded = caesar_cipher(original, 3)
     decoded = caesar_cipher(encoded, -3)
     
@@ -108,8 +108,8 @@ def hash_lookup():
     
     # Create a lookup table with hashed keys
     secrets = {
-        "google_api": "AIzaSyAEaO1UMo9k844-ejiP_dfT7R-EJk0xy4Q",
-        "serverless_endpoint": "https://5bzwmpf3kydzcy2kbz4rtn4z7i0crxoh.lambda-url.us-west-2.on.aws/"
+        "google_api": "YOUR-API-KEY-HERE-EXAMPLE",
+        "serverless_endpoint": "https://your-endpoint.example.com/"
     }
     
     # Hash the keys
@@ -134,8 +134,8 @@ import base64
 
 # Obfuscated configuration
 ENCODED_CONFIGS = {
-    'auth_token': 'QUl6YVN5QUVhTzFVTW85azg0NC1lamlQX2RmVDdSLUVKazB4eTRR',
-    'backend_url': 'aHR0cHM6Ly81Ynp3bXBmM2t5ZHpjeTJrYno0cnRuNHo3aTBjcnhvaC5sYW1iZGEtdXJsLnVzLXdlc3QtMi5vbi5hd3Mv'
+    'auth_token': 'WU9VUi1BUEktS0VZLUhFUkUtRVhBTVBMRQ==',
+    'backend_url': 'aHR0cHM6Ly95b3VyLWVuZHBvaW50LmV4YW1wbGUuY29tLw=='
 }
 
 def get_config(key):
@@ -156,7 +156,7 @@ import base64
 import os
 
 # Obfuscated endpoint (base64 encoded)
-ENCODED_ENDPOINT = "aHR0cHM6Ly81Ynp3bXBmM2t5ZHpjeTJrYno0cnRuNHo3aTBjcnhvaC5sYW1iZGEtdXJsLnVzLXdlc3QtMi5vbi5hd3Mv"
+ENCODED_ENDPOINT = "aHR0cHM6Ly95b3VyLWVuZHBvaW50LmV4YW1wbGUuY29tLw=="
 
 def get_serverless_url():
     """Get the serverless URL from environment or decode obfuscated value"""
@@ -187,7 +187,7 @@ def env_based_obfuscation():
     env_setup = '''
 # .env file
 WORKSHOP_MODE=production
-AUTH_SERVICE_URL=aHR0cHM6Ly81Ynp3bXBmM2t5ZHpjeTJrYno0cnRuNHo3aTBjcnhvaC5sYW1iZGEtdXJsLnVzLXdlc3QtMi5vbi5hd3Mv
+AUTH_SERVICE_URL=aHR0cHM6Ly95b3VyLWVuZHBvaW50LmV4YW1wbGUuY29tLw==
 ML_PROVIDER=google
 BACKEND_ENCODING=base64
 
