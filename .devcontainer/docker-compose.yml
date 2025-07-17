@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ../..:/workspaces:cached
+      - ..:/workspaces/multimodal-agents-lab:cached
     depends_on:
       - mongodb
 
