@@ -1,0 +1,36 @@
+{
+    "name": "Jupyter Notebook with MongoDB",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "lab-runner",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "forwardPorts": [
+        8888,
+        27017
+    ],
+    "hostRequirements": {
+        "cpus": 4
+    },
+    "containerEnv": {
+        "WORKSHOP_BACKEND_URL": "aHR0cHM6Ly81Ynp3bXBmM2t5ZHpjeTJrYno0cnRuNHo3aTBjcnhvaC5sYW1iZGEtdXJsLnVzLXdlc3QtMi5vbi5hd3Mv",
+        "ML_SERVICE_ENDPOINT": "aHR0cHM6Ly81Ynp3bXBmM2t5ZHpjeTJrYno0cnRuNHo3aTBjcnhvaC5sYW1iZGEtdXJsLnVzLXdlc3QtMi5vbi5hd3Mv",
+        "DATABASE_CONNECTION_STRING": "mongodb://admin:mongodb@mongodb:27017/",
+        "WORKSHOP_MODE": "production",
+        "ENCODING_TYPE": "base64"
+    },
+    "updateContentCommand": "pip install --user -r requirements.txt",
+    "postCreateCommand": "bash -c 'python -m ipykernel install --user --name=python3 --display-name=\"Python 3\" && jupyter kernelspec list'",
+    "postStartCommand": "jupyter kernelspec list",
+    "customizations": {
+        "codespaces": {
+            "openFiles": []
+        },
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-tools.vscode-jupyter",
+                "mongodb.mongodb-vscode"
+            ]
+        }
+    }
+}
