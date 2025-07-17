@@ -14,8 +14,9 @@
         "SERVERLESS_URL": "https://5bzwmpf3kydzcy2kbz4rtn4z7i0crxoh.lambda-url.us-west-2.on.aws/",
         "MONGODB_URI": "mongodb://admin:mongodb@mongodb:27017/"
     },
-    "updateContentCommand": "python3 -m pip install -r requirements.txt",
-    "postCreateCommand": "python3 -m ipykernel install --user --name=python3 --display-name='Python 3'",
+    "updateContentCommand": "bash -c 'source /opt/python-env/bin/activate && pip install --upgrade pip && pip install -r requirements.txt'",
+    "postCreateCommand": "bash -c 'source /opt/python-env/bin/activate && python -m ipykernel install --user --name=python3 --display-name=\"Python 3 (Project)\" && python -m ipykernel install --sys-prefix --name=python3 --display-name=\"Python 3 (Project)\" && jupyter kernelspec list'",
+    "postStartCommand": "bash -c 'source /opt/python-env/bin/activate && python -m ipykernel install --user --name=python3 --display-name=\"Python 3 (Project)\" && jupyter kernelspec list'",
     "customizations": {
         "codespaces": {
             "openFiles": []
