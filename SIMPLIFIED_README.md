@@ -33,13 +33,19 @@ pip install pymongo-voyageai-multimodal google-generativeai python-dotenv
 
 ### 2. Set Environment Variables
 
-Create a `.env` file:
+Create a `.env` file with **required** variables:
 
 ```env
+# Required for core functionality
 MONGODB_ATLAS_CONNECTION_STRING=mongodb+srv://...
-S3_BUCKET_NAME=your-bucket-name
 VOYAGEAI_API_KEY=your-voyage-key
 GOOGLE_API_KEY=your-gemini-key
+```
+
+**Optional** variables (for S3 features):
+```env
+# Only needed for S3 features (completely optional!)
+S3_BUCKET_NAME=your-bucket-name
 ```
 
 ### 3. Run the Workshop
@@ -84,6 +90,21 @@ No more manual index creation! The library handles everything:
 - Dimension detection
 - Similarity metrics
 - Index optimization
+
+### 📄 Direct URL Processing (No S3 Required!)
+
+**Core Feature:**
+```python
+# Process any public PDF directly
+images = client.url_to_images("https://arxiv.org/pdf/2501.12948")
+client.add_documents(images)
+```
+
+**Optional S3 Support:**
+```python
+# Advanced: Load from private S3 bucket
+images = client.url_to_images("s3://your-bucket/document.pdf")
+```
 
 ## 📚 Workshop Contents
 
