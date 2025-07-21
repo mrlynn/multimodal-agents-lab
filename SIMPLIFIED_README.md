@@ -37,8 +37,8 @@ Create a `.env` file with **required** variables:
 
 ```env
 # Required for core functionality
-MONGODB_ATLAS_CONNECTION_STRING=mongodb+srv://...
-VOYAGEAI_API_KEY=your-voyage-key
+MONGODB_URI=mongodb+srv://...
+VOYAGE_API_KEY=your-voyage-key
 GOOGLE_API_KEY=your-gemini-key
 ```
 
